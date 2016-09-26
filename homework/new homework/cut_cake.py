@@ -4,5 +4,5 @@ def cut_cake(parts):
     except (ZeroDivisionError, TypeError, ValueError):
         return "are you crazy?"
 
-cake = cut_cake([1, 2, 3])
-print(cake)
+#cake = cut_cake([1, 2, 3])
+#print(cake)
