@@ -2,7 +2,11 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 def answer(user_text):
     user_text = user_text.strip().lower()
-    dictionary = {'hello':'Hello!', "bye":"Bye!"}
+    if "!" in user_text:
+        return "dont shout on me!"
+    if "?" in user_text:
+        return "I would not answer any questions without my lawyer"
+    dictionary = {'hello':'Hello!', "bye":"Bye!", "how are you?"}
     usrmsg = dictionary.get(user_text, "I dont know!")
     return usrmsg
 
