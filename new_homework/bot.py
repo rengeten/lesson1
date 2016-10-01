@@ -1,5 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import answer, solver
+import answer, solver, str_clac
 
 def start(bot, update):
     print("Вызван /start")
@@ -19,6 +19,8 @@ def talk_to_me(bot, update):
     user_text = update.message.text
     if "=" in user_text:
         bot.sendMessage(update.message.chat_id, text = solver.solver(user_text))
+    elif "сколько будет" in user_text:
+        bot.sendMessage(update.message.chat_id, text = str_clac.str_clac(user_text))
     else:    
         bot.sendMessage(update.message.chat_id, text = answer.answer(user_text))
 
