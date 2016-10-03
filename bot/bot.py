@@ -11,7 +11,7 @@ def count(bot, update):
     msg = msg.split(' ')
     print(len(msg))
     output = len(msg) - 1
-    full_output = 'Предложение содержит '+str(output)+' слов'
+    full_output = 'Предложение содержит {} слов'.format(output)
     bot.sendMessage(update.message.chat_id, text = full_output)
 
 def talk_to_me(bot, update):
